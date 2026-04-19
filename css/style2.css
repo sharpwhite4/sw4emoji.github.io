@@ -13,22 +13,22 @@ h1 {
 display: block;
 margin-left: auto;
 margin-right: auto;
-content: url(/images/bl5.png);
+content: url(../images/bl5.png);
 }
 .i4{
-    content: url(/images/bl4.webp);
+    content: url(../images/bl4.webp);
 }
 .i3{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    content: url(/images/bl3.webp);
+    content: url(../images/bl3.webp);
     width: 400px;
     height: 200px;
     
 }
 .gif{
-    content: url(/images/kaito-project-diva.gif)
+    content: url(../images/kaito-project-diva.gif)
 }
 .main {
 width: 20px;
