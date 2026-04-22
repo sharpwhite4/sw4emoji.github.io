@@ -2,8 +2,9 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-image: url("../images/bg2.jpg");
     color: #343962;
-    margin: 0 auto;
-    width: 60%;
+    max-width: 60vw;
+    margin: 10px auto;
+    
     
 }
 h1 {
@@ -13,22 +14,28 @@ h1 {
 display: block;
 margin-left: auto;
 margin-right: auto;
+max-width: 50vw;
 content: url(../images/bl5.png);
 }
 .i4{
-    content: url(../images/bl4.webp);
+    content: url(/images/bl4.webp);
+    max-width:100px; margin-right: 10px;
+    display: inline-block;
 }
 .i3{
     display: block;
     margin-left: auto;
     margin-right: auto;
     content: url(../images/bl3.webp);
-    width: 400px;
-    height: 200px;
+    max-width: 80vw;
+    height: auto;
     
 }
 .gif{
-    content: url(../images/kaito-project-diva.gif)
+     width: 200px;
+    content: url(../images/kaito-project-diva.gif);
+     margin: 10px;
+    align-items: right;
 }
 .main {
 width: 20px;
@@ -88,23 +95,6 @@ caption{
 .emtablest tr:hover {
     background-color: #8da7b7;
 }
-.navigation {
-    margin: 0 auto;
-    background-color: transparent;
-    border-collapse: separate;
-    width: 80%; 
-    border-spacing: 10px; 
-    padding: 10px;
-}
-.navigation td {
-    font-weight: bold;
-    border: 3px solid #6a85b2;
-    background-color:#8ca9d8;
-    text-align: center;
-}
-.navigation td:hover{
-background-color: #9cb4d6;
-}
 footer a{
     color:#343962;
 }
@@ -121,20 +111,22 @@ footer a:active{
     width: 100%; 
     margin-left: -150px;
     border-spacing: 20px; 
-    padding: 10px;
+    padding: 60px;
     } 
 .tableneko .text{
         text-align: center;
 }
-.row {
-    display: flex;
-    gap: 200px;
-}
+
 
 .box {
+   
     align-items: center;
     text-align: center;
     flex: 1;
+    width: 40vw;
+}
+.l{
+    margin-left: -200px;
 }
 .photo{
    display:block;
@@ -143,4 +135,97 @@ footer a:active{
 }
 .textc{
     text-align: center;
+}
+.et{
+    max-width: 50vw;
+    margin: 0 auto;
+    display:grid;
+   grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+
+}
+.g{
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    font-size: 1vw;
+
+}
+.st{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+
+}
+@media(max-width:700px){
+    body{
+        min-width: 60vw;
+        max-width: none;
+        margin: 10px;
+    }
+    h1, h2 {
+      
+        min-width: 80vw;
+        text-align: center;
+        font-size: 4.5vw;
+    }
+    footer {
+        flex-direction: column;
+    }
+    footer div p {
+      
+        font-size: 3.5vw;
+    }
+    .gif{
+       display: block;
+        margin: 10px auto;
+       
+    }
+    .tableneko {
+    margin: 0 auto;
+    background-color: transparent;
+    border-collapse: separate;
+    border-spacing: 20px; 
+    padding: 10px;
+    } 
+    .tablest.kao{
+        min-width: 90vw;
+    }
+    .g{
+    grid-template-columns: 1fr;
+    font-size: 3vw;
+}
+.st{
+    grid-template-columns: 1fr;
+}
+.box{
+    width: 90vw;
+}
+.l{
+    margin-left: 10px;
+}
+.et{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+}
+.nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    background-color: #8ca9d8;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    background-color: #9cb4d6;
 }
