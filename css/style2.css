@@ -18,7 +18,7 @@ max-width: 50vw;
 content: url(../images/bl5.png);
 }
 .i4{
-    content: url(/images/bl4.webp);
+    content: url(../images/bl4.webp);
     max-width:100px; margin-right: 10px;
     display: inline-block;
 }
