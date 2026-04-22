@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url("/images/bg.avif");
+    background-image: url("../images/bg.avif");
     color: #5E4444;
     margin: 0 auto;
     max-width: 90vw;
@@ -10,22 +10,22 @@ display: block;
 margin-left: auto;
 margin-right: auto;
 max-width: 50vw;
-content: url(/images/sakura5.png);
+content: url(../images/sakura5.png);
 }
 .i4{
-    content: url(/images/sakura4.png);
+    content: url(../images/sakura4.png);
     max-width:100px; margin-right: 10px;
     display: inline-block;
 }
 .i3 {
-    content: url(/images/sakura3.png);
+    content: url(../images/sakura3.png);
    width: 150px;
     height: auto;
     display: inline-block;
 }
 .gif{
     width: 200px;
-    content: url(/images/cute-core-hatsune-miku.gif);
+    content: url(../images/cute-core-hatsune-miku.gif);
    margin: 10px;
     align-items: right;
 }
