@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Головна</title>
     <link rel="icon" href="images/images.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/style2.css"/>
-    
-    <!-- <link rel="stylesheet" type="text/css" href="css/style2.css"/> -->
+     <link id="theme" rel="stylesheet" href="css/style.css">    
+
+    <link rel="stylesheet" href="sakura/sakura.css" />
+    <script src="sakura/sakura.js"></script>
 </head>
 <body>
     <h1 class="title">°❀⋆.ೃ࿔･ Все про смайлики °❀⋆.ೃ࿔･</h1>
@@ -21,7 +22,10 @@
     <a href="styles.html">Стилі смайликів</a>
     <a href="company.html">The Smiley Company</a>
 </nav>
-       
+      <div class="nav">
+  <button onclick="switchTheme()">Змінити тему</button>
+</div>
+  
 
     <p>Смайлики, емодзі та каомодзі — це універсальна мова емоцій, яка допомагає людям передавати настрій, реакції та почуття у цифровому спілкуванні. Вони стали невід’ємною частиною інтернет-культури та щоденного онлайн-спілкування. Перші текстові смайлики з’явилися у 1982 році завдяки Скотт Фальман, який запропонував використовувати символи :-) та :-( для розрізнення жартів і серйозних повідомлень. З цього моменту почався розвиток цілої системи візуального вираження емоцій у тексті.
     З часом смайлики еволюціонували у різні стилі. У західному світі популярними стали прості горизонтальні емотикони, такі як :) або :D. У Японії виникли каомодзі — більш складні вертикальні смайлики (^_^) або (T_T), які підкреслюють емоції через очі та використовують ширший набір символів. Їх розвиток значною мірою підтримали японські текстборди.
@@ -47,6 +51,73 @@
     </div>
     <img class="gif" alt="gif"/>
 </footer>
+
+<script>
+window.onload = function () {
+
+  // --- тема ---
+  let theme = localStorage.getItem("theme") || "css/style.css";
+  document.getElementById("theme").href = theme;
+
+  // --- вибір кольору сакури ---
+  let colors;
+
+  if (theme === "css/style2.css") {
+    // 💙 блакитна сакура
+   colors = [
+  {
+    gradientColorStart: 'rgba(120, 170, 255, 0.9)',
+    gradientColorEnd: 'rgba(80, 130, 220, 0.9)',
+    gradientColorDegree: 120,
+  },
+  {
+    gradientColorStart: 'rgba(100, 150, 240, 0.9)',
+    gradientColorEnd: 'rgba(60, 110, 200, 0.9)',
+    gradientColorDegree: 120,
+  },
+  {
+    gradientColorStart: 'rgba(140, 190, 255, 0.85)',
+    gradientColorEnd: 'rgba(90, 140, 230, 0.85)',
+    gradientColorDegree: 120,
+  }
+];
+  } else {
+    // 🌸 рожева сакура
+    colors = [
+      {
+        gradientColorStart: 'rgba(255, 183, 197, 0.9)',
+        gradientColorEnd: 'rgba(255, 197, 208, 0.9)',
+        gradientColorDegree: 120,
+      },
+      {
+        gradientColorStart: 'rgba(255,189,189)',
+        gradientColorEnd: 'rgba(227,170,181)',
+        gradientColorDegree: 120,
+      }
+    ];
+  }
+
+  // --- запуск сакури ---
+  new Sakura('body', {
+    colors: colors
+  });
+
+};
+
+// --- перемикання теми ---
+function switchTheme() {
+  let current = localStorage.getItem("theme");
+
+  if (current === "css/style2.css") {
+    localStorage.setItem("theme", "css/style.css");
+  } else {
+    localStorage.setItem("theme", "css/style2.css");
+  }
+
+  location.reload(); // щоб оновилась і сакура теж
+}
+</script>
+    
 </body>
 
 </html>
