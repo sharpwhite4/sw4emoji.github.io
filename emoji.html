@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Емоджі</title>
     <link rel="icon" href="images/images.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link id="theme" rel="stylesheet" href="css/style.css">    
 </head>
 <body>
     <h1>  ❀.• *₊°。 ❀°。Емоджі ❀.• *₊°。 ❀°。<img class="i3" alt="sakura3"/> </h1>
@@ -16,7 +16,10 @@
     <a href="styles.html">Стилі смайликів</a>
     <a href="company.html">The Smiley Company</a>
 </nav>
-
+<div style="text-align: center;">
+  <button onclick="switchTheme()">Змінити тему</button>
+</div>
+    
     <p>Емодзі — це маленькі піктограми або символи, які допомагають передавати емоції, дії та настрої в текстових повідомленнях. Вони роблять спілкування більш виразним, коли слова не можуть передати весь настрій. Сьогодні емодзі це невід’ємна частина цифрової культури і допомагають легко спілкуватися по всьому світу.</p>
     <h2>Ранні емодзі ❀.• *₊°。 ❀°。</h2>
     <p><img src="images/firstemoji.png" alt="firstemoji" style="float:right; width: 200px; margin: 10px"/>Перші емодзі з’явилися ще в 1980-х – на початку 1990-х років, хоча точна історія трохи заплутана. Раніше вважали, що перші емодзі створив DoCoMo у 1999 році, але насправді компанія SoftBank випустила свій набір уже в 1997 році. На телефоні SkyWalker DP-211SW було 90 маленьких монохромних емодзі: цифри, символи спорту, погоди та фаз місяця. Через те, що телефон продавався мало, ці емодзі були рідко відомі.
@@ -131,6 +134,18 @@
     </div>
     <img class="gif" alt="gif"/>
 </footer>
+
+    <script>
+let t = localStorage.getItem("theme") || "css/style.css";
+document.getElementById("theme").href = t;
+
+function switchTheme(){
+let c = localStorage.getItem("theme");
+localStorage.setItem("theme", c==="css/style2.css"?"css/style.css":"css/style2.css");
+document.getElementById("theme").href = localStorage.getItem("theme");
+}
+</script>
+    
 </body>
 
 </html>
