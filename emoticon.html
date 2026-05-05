@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Смайлики</title>
     <link rel="icon" href="images/images.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link id="theme" rel="stylesheet" href="css/style.css">    
 </head>
 <body>
     <h1>❀.• *₊°。 ❀°。Смайлики ◡̈  ❀.• *₊°。 ❀°。 <img class="i3" alt="sakura3"/> </h1>
@@ -17,7 +17,10 @@
     <a href="styles.html">Стилі смайликів</a>
     <a href="company.html">The Smiley Company</a>
 </nav>
-
+<div style="text-align: center;">
+  <button onclick="switchTheme()">Змінити тему</button>
+</div>
+    
     <p>Смайлики (емотикони) — це поєднання символів, таких як розділові знаки, цифри та літери, які використовуються для передачі емоцій у текстовому спілкуванні. Вони допомагають передати настрій, реакцію або ставлення без використання додаткових слів.</p>
     <h2>Історія виникнення ❀.• *₊°。❀°。</h2>
     <p>Перші сучасні смайлики з’явилися у 1982 році завдяки Скотт Фальман. Він запропонував використовувати :-) для позначення жартів і :-( для серйозних або сумних повідомлень:</p>
@@ -97,6 +100,18 @@
     </div>
     <img class="gif" alt="gif"/>
 </footer>
+
+    <script>
+let t = localStorage.getItem("theme") || "css/style.css";
+document.getElementById("theme").href = t;
+
+function switchTheme(){
+let c = localStorage.getItem("theme");
+localStorage.setItem("theme", c==="css/style2.css"?"css/style.css":"css/style2.css");
+document.getElementById("theme").href = localStorage.getItem("theme");
+}
+</script>
+    
 </body>
 
 </html>
