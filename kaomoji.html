@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каомодзі</title>
     <link rel="icon" href="images/images.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/style2.css"/>
+<link id="theme" rel="stylesheet" href="css/style.css">    
 </head>
 <body>
     <h1> ❀.• *₊°。 ❀°。Каомодзі ❀.• *₊°。 ❀°。<img class="i3" alt="sakura3"/></h1>
@@ -18,6 +18,9 @@
     <a href="styles.html">Стилі смайликів</a>
     <a href="company.html">The Smiley Company</a>
 </nav>
+    <div class="nav">
+  <button onclick="switchTheme()">Змінити тему</button>
+</div>
 
     <p>Каомоджі — це японські текстові емотикони, які створюються з символів і передають емоції, міміку та навіть дії прямо в тексті. Саме слово походить від японських “kao” (обличчя) та “moji” (символ) .
 На відміну від звичних нам смайликів типу :-) чи :), каомоджі не потрібно «повертати» вбік — вони читаються прямо, як справжні обличчя. Наприклад:</p>
@@ -154,6 +157,18 @@
     </div>
     <img class="gif" alt="gif"/>
 </footer>
+
+    <script>
+let t = localStorage.getItem("theme") || "css/style.css";
+document.getElementById("theme").href = t;
+
+function switchTheme(){
+let c = localStorage.getItem("theme");
+localStorage.setItem("theme", c==="css/style2.css"?"css/style.css":"css/style2.css");
+document.getElementById("theme").href = localStorage.getItem("theme");
+}
+</script>
+    
 </body>
 
 </html>
