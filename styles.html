@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Стилі смайликів</title>
     <link rel="icon" href="images/images.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/style2.css"/>
-    
+<link id="theme" rel="stylesheet" href="css/style.css">    
 </head>
 <body>
     <h1> ❀.• *₊°。 Стилі смайликів ❀.• *₊°。 <img class="i3" alt="sakura3"/></h1>
@@ -18,7 +17,11 @@
     <a href="emoji.html">Емодзі</a>
     <a href="company.html">The Smiley Company</a>
 </nav>
+ <div class="nav">
+  <button onclick="switchTheme()">Змінити тему</button>
+</div>
 
+    
 
     <p>Смайлики розвинулися у різні стилі залежно від культури, платформи та естетики. Основні стилі включають:</p>
    <div class="st">
@@ -117,6 +120,18 @@
     </div>
     <img class="gif" alt="gif"/>
 </footer>
+
+    <script>
+let t = localStorage.getItem("theme") || "css/style.css";
+document.getElementById("theme").href = t;
+
+function switchTheme(){
+let c = localStorage.getItem("theme");
+localStorage.setItem("theme", c==="css/style2.css"?"css/style.css":"css/style2.css");
+document.getElementById("theme").href = localStorage.getItem("theme");
+}
+</script>
+    
 </body>
 
 </html>
