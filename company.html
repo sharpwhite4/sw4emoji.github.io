@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Smiley Company</title>
     <link rel="icon" href="images/images.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link id="theme" rel="stylesheet" href="css/style.css">    
 </head>
 <body>
     <h1>❀.• *₊°。 The Smiley Company ❀.• *₊°。 <img class="i3" alt="sakura3"/></h1>
@@ -16,7 +16,9 @@
    <a href="emoji.html">Емодзі</a>
     <a href="styles.html">Стилі смайликів</a>
 </nav>
-   
+   <div style="text-align: center;">
+  <button onclick="switchTheme()">Змінити тему</button>
+</div>
 
     <p>The Smiley Company — міжнародна компанія з ліцензування брендів, що базується у Лондоні (Великобританія) і володіє правами на використання символу смайлика в понад 100 країнах світу.</p>
     <h2>Історія виникнення ❀.• *₊°。❀°。</h2>
@@ -50,6 +52,18 @@
     </div>
     <img class="gif" alt="gif"/>
 </footer>
+
+    <script>
+let t = localStorage.getItem("theme") || "css/style.css";
+document.getElementById("theme").href = t;
+
+function switchTheme(){
+let c = localStorage.getItem("theme");
+localStorage.setItem("theme", c==="css/style2.css"?"css/style.css":"css/style2.css");
+document.getElementById("theme").href = localStorage.getItem("theme");
+}
+</script>
+    
 </body>
 
 </html>
